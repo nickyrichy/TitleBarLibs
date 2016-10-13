@@ -1,4 +1,4 @@
-package utouu.com.TitleBarLibs;
+package utouu.com.libs;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("utouu.com.translucentstatus", appContext.getPackageName());
+        assertEquals("utouu.com.libs.test", appContext.getPackageName());
     }
 }

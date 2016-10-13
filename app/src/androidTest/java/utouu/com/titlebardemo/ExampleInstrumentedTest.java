@@ -1,4 +1,4 @@
-package utouu.com.translucentstatus;
+package utouu.com.titlebardemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package utouu.com.translucentstatus;
+package utouu.com.titlebardemo;
 
 import org.junit.Test;
 
