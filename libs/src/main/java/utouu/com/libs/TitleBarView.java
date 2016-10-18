@@ -6,20 +6,22 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
  * Created by 李良海 on 2016/10/14 13:02.
- * Function:
+ * Function:定制标题栏
  * Desc:
  */
 
-public class TitleBarView extends LinearLayout {
+public class TitleBarView extends LinearLayout implements View.OnClickListener {
 
     private static final int DEFAULT_TEXT_COLOR = 0XFFFFFFFF;
     private static final int DEFAULT_BG_COLOR = 0XFF2C2D31;
@@ -56,7 +58,7 @@ public class TitleBarView extends LinearLayout {
     private int mScreenWidth;
     private int mPaddingValue;
     private int mDividerHeight;
-
+    private int mActionPadding;
     /**
      * 支持沉浸式状态栏
      */
@@ -82,8 +84,8 @@ public class TitleBarView extends LinearLayout {
         }
 
         mScreenWidth = getScreenWidth();
-        mPaddingValue = dip2px(context,10);
-        mDividerHeight = dip2px(context,1);
+        mPaddingValue = dip2px(context, 10);
+        mActionPadding = dip2px(context, 6);
         initView(context);
     }
 
@@ -101,8 +103,8 @@ public class TitleBarView extends LinearLayout {
         mLeftContainer.setGravity(Gravity.CENTER_VERTICAL);
         mCenterContainer.setGravity(Gravity.CENTER);
         mRightContainer.setGravity(Gravity.CENTER_VERTICAL);
-        mLeftContainer.setPadding(mPaddingValue,0,0,0);
-        mRightContainer.setPadding(0,0,mPaddingValue,0);
+        mLeftContainer.setPadding(mPaddingValue, 0, 0, 0);
+        mRightContainer.setPadding(0, 0, mPaddingValue, 0);
 
         mLeftTv = new TextView(context);
         mTitleTv = new TextView(context);
@@ -112,17 +114,16 @@ public class TitleBarView extends LinearLayout {
         mTitleTv.setTextColor(DEFAULT_TEXT_COLOR);
         mLeftTv.setGravity(Gravity.CENTER);
         mTitleTv.setGravity(Gravity.CENTER);
-        mTitleTv.setText("标题");
-        mLeftTv.setText("返回");
 
         mLeftContainer.addView(mLeftTv);
         mCenterContainer.addView(mTitleTv);
 
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
-        LayoutParams dividerLayoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, mDividerHeight);
-        addView(mLeftContainer, params);
-        addView(mCenterContainer, params);
-        addView(mRightContainer, params);
+        LayoutParams dividerLayoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, 0);
+
+        addView(mLeftContainer, params);//添加左边容器
+        addView(mCenterContainer, params);//添加中间容器
+        addView(mRightContainer, params);//添加右边容器
         addView(mDividerView, dividerLayoutParams);
 
     }
@@ -131,20 +132,21 @@ public class TitleBarView extends LinearLayout {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
 
+        //控制子View的位置
         mLeftContainer.layout(0, mStatusHeight, mLeftContainer.getMeasuredWidth(),
                 mLeftContainer.getMeasuredHeight());
 
-        mRightContainer.layout(mScreenWidth- mRightContainer.getMeasuredWidth(),mStatusHeight,
+        mRightContainer.layout(mScreenWidth - mRightContainer.getMeasuredWidth(), mStatusHeight,
                 mScreenWidth, mRightContainer.getMeasuredHeight());
 
         if (mLeftContainer.getMeasuredWidth() > mRightContainer.getMeasuredWidth()) {
             mCenterContainer.layout(mLeftContainer.getMeasuredWidth(), mStatusHeight,
                     mScreenWidth - mLeftContainer.getMeasuredWidth(), mCenterContainer.getMeasuredHeight());
         } else {
-            mCenterContainer.layout(mLeftContainer.getMeasuredWidth(), mStatusHeight,
+            mCenterContainer.layout(mRightContainer.getMeasuredWidth(), mStatusHeight,
                     mScreenWidth - mRightContainer.getMeasuredWidth(), mCenterContainer.getMeasuredHeight());
         }
-        mDividerView.layout(0,getMeasuredHeight() - mDividerHeight,mScreenWidth,getMeasuredHeight());
+        mDividerView.layout(0, getMeasuredHeight() - mDividerHeight, mScreenWidth, getMeasuredHeight());
     }
 
     /**
@@ -152,7 +154,7 @@ public class TitleBarView extends LinearLayout {
      *
      * @param resId 资源id
      */
-    public void setLeftImageResource(int resId,int drawablePadding) {
+    public void setLeftImageResource(int resId, int drawablePadding) {
         mLeftTv.setCompoundDrawablesWithIntrinsicBounds(resId, 0, 0, 0);
         mLeftTv.setCompoundDrawablePadding(dip2px(getContext(), drawablePadding));
     }
@@ -169,8 +171,8 @@ public class TitleBarView extends LinearLayout {
         mLeftTv.setText(resid);
     }
 
-    public void setLeftTextSize(int spValue) {
-        mLeftTv.setTextSize(sp2px(getContext(),spValue));
+    public void setLeftTextSize(float spValue) {
+        mLeftTv.setTextSize(spValue);
     }
 
     public void setLeftTextColor(ColorStateList color) {
@@ -193,7 +195,7 @@ public class TitleBarView extends LinearLayout {
      *
      * @param view
      */
-    public void setmCenterView(View view) {
+    public void setCenterView(View view) {
         mCenterContainer.addView(view);
     }
 
@@ -201,7 +203,13 @@ public class TitleBarView extends LinearLayout {
         mCenterContainer.setOnClickListener(l);
     }
 
-    public void setTitle(int resid) {
+    public void setTitleText(int resid) {
+        mTitleTv.setText(resid);
+    }
+
+
+    public void setTitleText(CharSequence charSequence) {
+        mTitleTv.setText(charSequence);
     }
 
     public void setTitleColor(int resid) {
@@ -214,14 +222,14 @@ public class TitleBarView extends LinearLayout {
 
 
     public void setTitleTextSize(float titleTextSpValue) {
-        mTitleTv.setTextSize(sp2px(getContext(),titleTextSpValue));
+        mTitleTv.setTextSize(titleTextSpValue);
     }
 
-    public void setCustomTitle(View titleView) {
-        mTitleTv.setVisibility(View.GONE);
-        addView(titleView);
-    }
-
+    /**
+     * 设置下方分割线
+     *
+     * @param drawable
+     */
     public void setDivider(Drawable drawable) {
         mDividerView.setBackgroundDrawable(drawable);
     }
@@ -235,12 +243,108 @@ public class TitleBarView extends LinearLayout {
         mDividerView.getLayoutParams().height = dividerHeight;
     }
 
-    public void setRightView(View view) {
-        mRightContainer.addView(view);
+    /**
+     * 在标题栏右边添加action
+     * @param action
+     * @param position 添加的位置
+     */
+    public void addAction(Action action, int position) {
+        View view = inflateAction(action);
+        mRightContainer.addView(view, position);
     }
 
     /**
+     * 通过action加载一个View
+     * @param action
+     * @return
+     */
+    private View inflateAction(Action action) {
+        View view = null;
+        if (TextUtils.isEmpty(action.getText())) {
+            ImageView img = new ImageView(getContext());
+            img.setImageResource(action.getImageRecourse());
+            view = img;
+        } else {
+            TextView text = new TextView(getContext());
+            text.setGravity(Gravity.CENTER);
+            text.setText(action.getText());
+            text.setTextSize(DEFAULT_TEXT_SIZE);
+            text.setTextColor(DEFAULT_TEXT_COLOR);
+            view = text;
+        }
+
+        view.setPadding(mActionPadding, 0, mActionPadding, 0);
+        view.setTag(action);
+        view.setOnClickListener(this);
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getTag() instanceof Action) {
+            Action action = (Action) v.getTag();
+            action.performance(v);
+
+        }
+
+    }
+
+    /**
+     * 添加TextView或者ImageView以及相应的动作接口
+     */
+    public interface Action {
+        String getText();
+
+        int getImageRecourse();
+
+        void performance(View view);
+
+    }
+
+    public abstract class ImageAction implements Action {
+
+        private int mDrawable;
+
+        public ImageAction(int mDrawable) {
+            this.mDrawable = mDrawable;
+        }
+
+        @Override
+        public String getText() {
+            return null;
+        }
+
+        @Override
+        public int getImageRecourse() {
+            return mDrawable;
+        }
+
+    }
+
+    public abstract class TextAction implements Action {
+
+        private String string;
+
+        public TextAction(String string) {
+            this.string = string;
+        }
+
+        @Override
+        public String getText() {
+            return string;
+        }
+
+        @Override
+        public int getImageRecourse() {
+            return 0;
+        }
+
+    }
+
+
+    /**
      * 设置沉浸式状态栏，4.4以上系统支持
+     *
      * @param isImmersive
      * @param activity
      */
@@ -277,6 +381,7 @@ public class TitleBarView extends LinearLayout {
 
     /**
      * 获取屏幕宽度
+     *
      * @return
      */
     private int getScreenWidth() {
@@ -293,17 +398,5 @@ public class TitleBarView extends LinearLayout {
     public static int dip2px(Context context, float dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
-    }
-
-    /**
-     * 将sp值转换为px值
-     *
-     * @param context
-     * @param spValue sp值
-     * @return
-     */
-    public static int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (spValue * fontScale + 0.5f);
     }
 }

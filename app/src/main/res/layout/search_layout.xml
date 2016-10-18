@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/et_main_search"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/shape"
+        android:drawableLeft="@drawable/first_search"
+        android:drawablePadding="10dp"
+        android:hint="标题2"
+        android:paddingBottom="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="4dp"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+</LinearLayout>
+

@@ -4,9 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <utouu.com.libs.TitleBar
-        android:id="@+id/titleView"
+    <utouu.com.libs.TitleBarView
+        android:id="@+id/titleBarView1"
         android:layout_width="match_parent"
         android:layout_height="64dp"/>
+
+    <utouu.com.libs.TitleBarView
+        android:id="@+id/titleBarView2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <utouu.com.libs.TitleBarView
+        android:id="@+id/titleBarView3"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
 
 </LinearLayout>
