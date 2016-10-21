@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBarView">
+
+        <attr name="outPadding" format="dimension"></attr>
+        <attr name="dividerHeight" format="dimension"></attr>
+        <attr name="actionPadding" format="dimension"></attr>
+        <attr name="isImmersive" format="boolean"></attr>
+
+        <attr name="leftText" format="string"></attr>
+        <attr name="leftTextBackgroundResource" format="reference"></attr>
+        <attr name="leftTextBackgroundColor" format="color"></attr>
+        <attr name="leftTextSize" format="dimension"></attr>
+        <attr name="leftTextColor" format="color"></attr>
+        <attr name="leftTextDrawable" format="reference"></attr>
+        <attr name="leftTextDrawablePadding" format="dimension"></attr>
+
+        <attr name="titleText" format="string"></attr>
+        <attr name="titleTextSize" format="dimension"></attr>
+        <attr name="titleTextColor" format="color"></attr>
+        <attr name="titleTextBackgroundColor" format="color"></attr>
+        <attr name="titleTextBackgroundResource" format="reference"></attr>
+
+        <attr name="actionTextSize" format="dimension"></attr>
+        <attr name="actionTextColor" format="color"></attr>
+        <attr name="actionTextBackgroundColor" format="color"></attr>
+        <attr name="actionTextBackgroundResource" format="reference"></attr>
+
+    </declare-styleable>
+</resources>

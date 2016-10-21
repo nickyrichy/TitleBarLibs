@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <utouu.com.libs.TitleBarView
         android:id="@+id/titleBarView1"
+        app:leftTextDrawable="@drawable/ic_back"
+        android:background="#343740"
+        app:titleText="标题"
+        app:titleTextSize="16sp"
+        app:outPadding="8dp"
+        app:isImmersive="true"
         android:layout_width="match_parent"
         android:layout_height="64dp"/>
 
     <utouu.com.libs.TitleBarView
         android:id="@+id/titleBarView2"
+        android:background="#343740"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"/>
@@ -18,6 +26,7 @@
     <utouu.com.libs.TitleBarView
         android:id="@+id/titleBarView3"
         android:layout_marginTop="10dp"
+        android:background="#343740"
         android:layout_width="match_parent"
         android:layout_height="40dp"/>
 
