@@ -23,9 +23,10 @@ dependencies {
 #### 二、截图
 ![这里是一张截图](https://www.baidu.com/img/bd_logo1.png"截图")
 #### 三、使用
-**3.1 提供方法**<br>
+**3.1 XML属性**<br>
 
 **3.2 示例代码**<br>
+1.
  
 #### 四、关于我 Marno
 - 邮箱：13228118026@163.com
