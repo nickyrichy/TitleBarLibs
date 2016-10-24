@@ -26,7 +26,10 @@ dependencies {
 **3.1 XML属性**<br>
 
 **3.2 示例代码**<br>
-1.
+支持沉浸式状态栏
+````
+mTitleBarView1.setImmersiveStatus(true,activity);
+```
  
 #### 四、关于我 Marno
 - 邮箱：13228118026@163.com
