@@ -3,10 +3,18 @@
 #### 一、简介：
 **1.1 Gradle集成**<br>
 ```
-maven {url "https://jitpack.io"}
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
 ```
 ```
-compile 'com.github.sandalli:TitleBarLibs:1.0'
+dependencies {
+    compile 'com.github.sandalli:TitleBarLibs:1.0'
+}
+
 ```
 
 **1.2 功能说明**<br>
