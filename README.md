@@ -20,7 +20,7 @@ dependencies {
 **1.2 功能说明**<br>
 自定义标题栏，轻松实现左中右样式标题,并支持沉浸式状态栏。
 #### 二、预览
-![Demo](http://github.com/sandalli/TitleBarLibs/raw/master/demo.gif"预览")
+![Demo](https://github.com/sandalli/TitleBarLibs/blob/master/demo.gif)
 #### 三、使用
 **3.1 XML属性**<br>
 <table>
