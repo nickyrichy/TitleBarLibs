@@ -24,7 +24,14 @@ dependencies {
 ![这里是一张截图](https://www.baidu.com/img/bd_logo1.png"截图")
 #### 三、使用
 **3.1 XML属性**<br>
-
+<table>
+<tbody>
+<tr><td><em>属性</em></td><td><em>说明</em></td></tr>
+<tr><td>1901</td><td>-10</td></tr>
+<tr><td>1910</td><td>-15</td></tr>
+<tr><td>1920</td><td>-10</td></tr>
+</tbody>
+</table>
 **3.2 示例代码**<br>
 支持沉浸式状态栏
 ````
@@ -81,7 +88,10 @@ dependencies {
             }
         });
 ```
-
- 
+设置下方分割线
+```
+        mTitleBarView.setDividerHeight(6);
+        mTitleBarView.setDividerBackgroundColor(Color.GRAY);
+```
 #### 四、关于我 Marno
 - 邮箱：13228118026@163.com
