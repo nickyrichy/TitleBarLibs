@@ -19,8 +19,8 @@ dependencies {
 
 **1.2 功能说明**<br>
 自定义标题栏，轻松实现左中右样式标题,并支持沉浸式状态栏。
-#### 二、截图
-![这里是一张截图](https://www.baidu.com/img/bd_logo1.png"截图")
+#### 二、预览
+![Demo](https://github.com/H07000223/FlycoTabLayout/blob/master/preview_1.gif"预览")
 #### 三、使用
 **3.1 XML属性**<br>
 <table>
