@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.flyco.tablayout.SegmentTabLayout;
+
 import utouu.com.libs.TitleBarView;
 
 /**
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TitleBarView mTitleBarView1;
     private TitleBarView mTitleBarView2;
     private TitleBarView mTitleBarView3;
+    private TitleBarView mTitleBarView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTitleBarView1 = (TitleBarView) findViewById(R.id.titleBarView1);
         mTitleBarView2 = (TitleBarView) findViewById(R.id.titleBarView2);
         mTitleBarView3 = (TitleBarView) findViewById(R.id.titleBarView3);
-
+        mTitleBarView4 = (TitleBarView) findViewById(R.id.titleBarView4);
         mTitleBarView1.setOnLeftTextClickListener(this);
-
 
         mTitleBarView2.setLeftText("签到");
         mTitleBarView2.addLeftAction(new TitleBarView.Action<View>() {
@@ -91,6 +93,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void performance(View view) {
 
+            }
+        });
+
+        mTitleBarView4.setLeftImageResource(R.drawable.ic_back, 24);
+        mTitleBarView4.addCenterAction(new TitleBarView.Action<View>() {
+            @Override
+            public View getContent() {
+                View view = View.inflate(MainActivity.this, R.layout.segment_tab_layout, null);
+                SegmentTabLayout segmentTabLayout = (SegmentTabLayout) view.findViewById(R.id.tl_1);
+                segmentTabLayout.setTabData(new String[]{"首页","消息"});
+                return view;
+            }
+
+            @Override
+            public void performance(View view) {
             }
         });
 

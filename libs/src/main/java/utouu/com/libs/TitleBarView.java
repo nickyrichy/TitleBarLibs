@@ -218,7 +218,7 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
     }
 
     public void setOnLeftTextClickListener(OnClickListener l) {
-        mLeftTv.setOnClickListener(l);
+        mLeftContainer.setOnClickListener(l);
     }
 
     public void setLeftText(CharSequence title) {
@@ -272,7 +272,9 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
      */
     public void addCenterAction(Action action) {
         View view = inflateAction(action);
-        mCenterContainer.addView(view);
+        if (view != null) {
+            mCenterContainer.addView(view);
+        }
     }
 
     public void setOnCenterClickListener(OnClickListener l) {
@@ -336,7 +338,8 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
     private View inflateAction(Action action) {
         View view = null;
         Object obj = action.getContent();
-
+        if (obj == null)
+            return null;
         if (obj instanceof View) {
             view = (View) obj;
         } else if (obj instanceof String) {

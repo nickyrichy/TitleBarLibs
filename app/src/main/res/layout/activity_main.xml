@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -25,6 +26,13 @@
 
     <utouu.com.libs.TitleBarView
         android:id="@+id/titleBarView3"
+        android:layout_marginTop="10dp"
+        android:background="#343740"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+    <utouu.com.libs.TitleBarView
+        android:id="@+id/titleBarView4"
         android:layout_marginTop="10dp"
         android:background="#343740"
         android:layout_width="match_parent"
