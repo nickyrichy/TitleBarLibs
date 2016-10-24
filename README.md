@@ -2,9 +2,7 @@
 --------------------------
 #### 一、简介：
 **1.1 Gradle集成**<br>
-Hello,大家好，我是果冻虾仁jdfa;sdjf;ajsd;ajsd;fjwejtwe;jgfl;
 
-http://blog.csdn.net/kaitiren/article/details/38513715 
 **1.2 功能说明**
  
 #### 二、截图
