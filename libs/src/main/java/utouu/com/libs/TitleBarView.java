@@ -219,7 +219,7 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
     }
 
     public void setOnLeftTextClickListener(OnClickListener l) {
-        mLeftContainer.setOnClickListener(l);
+        mLeftTv.setOnClickListener(l);
     }
 
     public void setLeftText(CharSequence title) {
