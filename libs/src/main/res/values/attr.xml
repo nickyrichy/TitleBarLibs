@@ -2,29 +2,29 @@
 <resources>
     <declare-styleable name="TitleBarView">
 
-        <attr name="outPadding" format="dimension"></attr>
-        <attr name="dividerHeight" format="dimension"></attr>
-        <attr name="actionPadding" format="dimension"></attr>
-        <attr name="isImmersive" format="boolean"></attr>
+        <attr name="llh_outPadding" format="dimension"></attr>
+        <attr name="llh_dividerHeight" format="dimension"></attr>
+        <attr name="llh_actionPadding" format="dimension"></attr>
+        <attr name="llh_isImmersive" format="boolean"></attr>
 
-        <attr name="leftText" format="string"></attr>
-        <attr name="leftTextBackgroundResource" format="reference"></attr>
-        <attr name="leftTextBackgroundColor" format="color"></attr>
-        <attr name="leftTextSize" format="dimension"></attr>
-        <attr name="leftTextColor" format="color"></attr>
-        <attr name="leftTextDrawable" format="reference"></attr>
-        <attr name="leftTextDrawablePadding" format="dimension"></attr>
+        <attr name="llh_leftText" format="string"></attr>
+        <attr name="llh_leftTextBackgroundResource" format="reference"></attr>
+        <attr name="llh_leftTextBackgroundColor" format="color"></attr>
+        <attr name="llh_leftTextSize" format="dimension"></attr>
+        <attr name="llh_leftTextColor" format="color"></attr>
+        <attr name="llh_leftTextDrawable" format="reference"></attr>
+        <attr name="llh_leftTextDrawablePadding" format="dimension"></attr>
 
-        <attr name="titleText" format="string"></attr>
-        <attr name="titleTextSize" format="dimension"></attr>
-        <attr name="titleTextColor" format="color"></attr>
-        <attr name="titleTextBackgroundColor" format="color"></attr>
-        <attr name="titleTextBackgroundResource" format="reference"></attr>
+        <attr name="llh_titleText" format="string"></attr>
+        <attr name="llh_titleTextSize" format="dimension"></attr>
+        <attr name="llh_titleTextColor" format="color"></attr>
+        <attr name="llh_titleTextBackgroundColor" format="color"></attr>
+        <attr name="llh_titleTextBackgroundResource" format="reference"></attr>
 
-        <attr name="actionTextSize" format="dimension"></attr>
-        <attr name="actionTextColor" format="color"></attr>
-        <attr name="actionTextBackgroundColor" format="color"></attr>
-        <attr name="actionTextBackgroundResource" format="reference"></attr>
+        <attr name="llh_actionTextSize" format="dimension"></attr>
+        <attr name="llh_actionTextColor" format="color"></attr>
+        <attr name="llh_actionTextBackgroundColor" format="color"></attr>
+        <attr name="llh_actionTextBackgroundResource" format="reference"></attr>
 
     </declare-styleable>
 </resources>

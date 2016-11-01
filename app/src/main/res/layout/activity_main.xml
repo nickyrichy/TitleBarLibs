@@ -7,12 +7,12 @@
 
     <utouu.com.libs.TitleBarView
         android:id="@+id/titleBarView1"
-        app:leftTextDrawable="@drawable/ic_back"
+        app:llh_leftTextDrawable="@drawable/ic_back"
         android:background="#343740"
-        app:titleText="标题"
-        app:titleTextSize="16sp"
-        app:outPadding="8dp"
-        app:isImmersive="true"
+        app:llh_titleText="标题"
+        app:llh_titleTextSize="16sp"
+        app:llh_outPadding="8dp"
+        app:llh_isImmersive="true"
         android:layout_width="match_parent"
         android:layout_height="64dp"/>
 

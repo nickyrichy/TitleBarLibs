@@ -102,29 +102,29 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
 
     private void initAttributes(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TitleBarView);
-        mPaddingValue = ta.getDimensionPixelSize(R.styleable.TitleBarView_outPadding, 0);
-        mDividerHeight = ta.getDimensionPixelSize(R.styleable.TitleBarView_dividerHeight, 0);
-        mActionPadding = ta.getDimensionPixelSize(R.styleable.TitleBarView_actionPadding, 0);
-        isImmersive = ta.getBoolean(R.styleable.TitleBarView_isImmersive, false);
+        mPaddingValue = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_outPadding, 0);
+        mDividerHeight = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_dividerHeight, 0);
+        mActionPadding = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_actionPadding, 0);
+        isImmersive = ta.getBoolean(R.styleable.TitleBarView_llh_isImmersive, false);
 
-        mLeftText = ta.getString(R.styleable.TitleBarView_leftText);
-        mLeftTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_leftTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
-        mLeftTextColor = ta.getColor(R.styleable.TitleBarView_leftTextColor, DEFAULT_TEXT_COLOR);
-        mLeftTextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_leftTextBackgroundResource, -1);
-        mLeftTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_leftTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
-        mLeftDrawable = ta.getResourceId(R.styleable.TitleBarView_leftTextDrawable, -1);
-        mLeftDrawablePadding = ta.getDimensionPixelSize(R.styleable.TitleBarView_leftTextDrawablePadding, 0);
+        mLeftText = ta.getString(R.styleable.TitleBarView_llh_leftText);
+        mLeftTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_leftTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
+        mLeftTextColor = ta.getColor(R.styleable.TitleBarView_llh_leftTextColor, DEFAULT_TEXT_COLOR);
+        mLeftTextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_llh_leftTextBackgroundResource, -1);
+        mLeftTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_llh_leftTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
+        mLeftDrawable = ta.getResourceId(R.styleable.TitleBarView_llh_leftTextDrawable, -1);
+        mLeftDrawablePadding = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_leftTextDrawablePadding, 0);
 
-        mTitleText = ta.getString(R.styleable.TitleBarView_titleText);
-        mTitleTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_titleTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
-        mTitleTextColor = ta.getColor(R.styleable.TitleBarView_titleTextColor, DEFAULT_TEXT_COLOR);
-        mTitleTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_titleTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
-        mTitleTextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_titleTextBackgroundResource, -1);
+        mTitleText = ta.getString(R.styleable.TitleBarView_llh_titleText);
+        mTitleTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_titleTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
+        mTitleTextColor = ta.getColor(R.styleable.TitleBarView_llh_titleTextColor, DEFAULT_TEXT_COLOR);
+        mTitleTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_llh_titleTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
+        mTitleTextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_llh_titleTextBackgroundResource, -1);
 
-        mActionTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_actionTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
-        mActionTextColor = ta.getColor(R.styleable.TitleBarView_actionTextColor, DEFAULT_TEXT_COLOR);
-        mActionTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_actionTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
-        mActionextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_actionTextBackgroundResource, -1);
+        mActionTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_actionTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
+        mActionTextColor = ta.getColor(R.styleable.TitleBarView_llh_actionTextColor, DEFAULT_TEXT_COLOR);
+        mActionTextBackgroundColor = ta.getColor(R.styleable.TitleBarView_llh_actionTextBackgroundColor, DEFAULT_TEXT_BG_COLOR);
+        mActionextBackgroundResource = ta.getResourceId(R.styleable.TitleBarView_llh_actionTextBackgroundResource, -1);
     }
 
     private void init(Context context) {
