@@ -1,4 +1,4 @@
-package utouu.com.titlebardemo;
+package utouu.utouu.titlebardemo;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.widget.Toast;
 
 import com.flyco.tablayout.SegmentTabLayout;
 
-import utouu.com.libs.TitleBarView;
+import com.utouu.titlebarlibs.TitleBarView;
+
 
 /**
  * Created by 李良海 on 2016/10/11 15:17.

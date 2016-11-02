@@ -1,4 +1,4 @@
-package utouu.com.libs;
+package com.utouu.titlebarlibs;
 
 import android.app.Activity;
 import android.content.Context;
@@ -404,6 +404,15 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         void performance(View view);
     }
 
+
+    public static abstract class DefaultAction implements Action {
+        @Override
+        public void performance(View view) {
+
+        }
+    }
+
+
     public abstract class ImageAction implements Action<Integer> {
 
         private int mDrawable;
@@ -444,9 +453,9 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             this.isImmersive = isImmersive;
-            if (isImmersive) {
-                mStatusHeight = getStatusHeight();
-            }
+            if (!isImmersive)
+                return;
+            mStatusHeight = getStatusHeight();
 
             if (activity == null) {
                 return;
