@@ -12,7 +12,7 @@ allprojects {
 ```
 ```
 dependencies {
-    compile 'com.github.sandalli:TitleBarLibs:1.0'
+    compile 'com.github.sandalli:TitleBarLibs:1.0.3'
 }
 
 ```
@@ -26,26 +26,26 @@ dependencies {
 <table>
 <tbody>
 <tr><td><em>属性</em></td><td><em>说明</em></td></tr>
-<tr><td>outPadding</td><td>标题栏左右控件的Padding</td></tr>
-<tr><td>dividerHeight</td><td>分割线高度</td></tr>
-<tr><td>actionPadding</td><td>通过action添加控件的间隔</td></tr>
-<tr><td>isImmersive</td><td>支持沉浸式状态栏</td></tr>
-<tr><td>leftText</td><td>左边文本内容</td></tr>
-<tr><td>leftTextBackgroundResource</td><td>通过Resource设置左边文本背景</td></tr>
-<tr><td>leftTextBackgroundColor</td><td>左边文本背景颜色</td></tr>
-<tr><td>leftTextSize</td><td>左边文本字体大小</td></tr>
-<tr><td>leftTextColor</td><td>左边文本字体颜色</td></tr>
-<tr><td>leftTextDrawable</td><td>左边图片</td></tr>
-<tr><td>leftTextDrawablePadding</td><td>左边图片和文本间隔</td></tr>
-<tr><td>titleText</td><td>中间标题文本内容</td></tr>
-<tr><td>titleTextSize</td><td>中间标题文本字体大小</td></tr>
-<tr><td>titleTextColor</td><td>中间标题文本字体颜色</td></tr>
-<tr><td>titleTextBackgroundColor</td><td>中间标题背景颜色</td></tr>
-<tr><td>titleTextBackgroundResource</td><td>通过Resource设置中间标题文本背景</td></tr>
-<tr><td>actionTextSize</td><td>通过action添加文本时字体大小</td></tr>
-<tr><td>actionTextColor</td><td>通过action添加文本时字体颜色</td></tr>
-<tr><td>actionTextBackgroundColor</td><td>通过action添加文本时背景颜色</td></tr>
-<tr><td>actionTextBackgroundResource</td><td>通过action添加文本时字体并用Resource设置背景</td></tr>
+<tr><td>llh_outPadding</td><td>标题栏左右控件的Padding</td></tr>
+<tr><td>llh_dividerHeight</td><td>分割线高度</td></tr>
+<tr><td>llh_actionPadding</td><td>通过action添加控件的间隔</td></tr>
+<tr><td>llh_isImmersive</td><td>支持沉浸式状态栏</td></tr>
+<tr><td>llh_leftText</td><td>左边文本内容</td></tr>
+<tr><td>llh_leftTextBackgroundResource</td><td>通过Resource设置左边文本背景</td></tr>
+<tr><td>llh_leftTextBackgroundColor</td><td>左边文本背景颜色</td></tr>
+<tr><td>llh_leftTextSize</td><td>左边文本字体大小</td></tr>
+<tr><td>llh_leftTextColor</td><td>左边文本字体颜色</td></tr>
+<tr><td>llh_leftTextDrawable</td><td>左边图片</td></tr>
+<tr><td>llh_leftTextDrawablePadding</td><td>左边图片和文本间隔</td></tr>
+<tr><td>llh_titleText</td><td>中间标题文本内容</td></tr>
+<tr><td>llh_titleTextSize</td><td>中间标题文本字体大小</td></tr>
+<tr><td>llh_titleTextColor</td><td>中间标题文本字体颜色</td></tr>
+<tr><td>llh_titleTextBackgroundColor</td><td>中间标题背景颜色</td></tr>
+<tr><td>llh_titleTextBackgroundResource</td><td>通过Resource设置中间标题文本背景</td></tr>
+<tr><td>llh_actionTextSize</td><td>通过action添加文本时字体大小</td></tr>
+<tr><td>llh_actionTextColor</td><td>通过action添加文本时字体颜色</td></tr>
+<tr><td>llh_actionTextBackgroundColor</td><td>通过action添加文本时背景颜色</td></tr>
+<tr><td>llh_actionTextBackgroundResource</td><td>通过action添加文本时字体并用Resource设置背景</td></tr>
 </tbody>
 </table>
 **3.2 示例代码**<br>
