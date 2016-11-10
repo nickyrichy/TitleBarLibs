@@ -6,6 +6,7 @@
         <attr name="llh_dividerHeight" format="dimension"></attr>
         <attr name="llh_actionPadding" format="dimension"></attr>
         <attr name="llh_isImmersive" format="boolean"></attr>
+        <attr name="llh_iisTitleFakeBold" format="boolean"></attr>
 
         <attr name="llh_leftText" format="string"></attr>
         <attr name="llh_leftTextBackgroundResource" format="reference"></attr>

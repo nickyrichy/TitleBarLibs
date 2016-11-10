@@ -12,6 +12,7 @@
         app:llh_titleText="标题"
         app:llh_titleTextSize="16sp"
         app:llh_isImmersive="true"
+        app:llh_iisTitleFakeBold="true"
         app:llh_outPadding="8dp"
         android:layout_width="match_parent"
         android:layout_height="64dp"/>

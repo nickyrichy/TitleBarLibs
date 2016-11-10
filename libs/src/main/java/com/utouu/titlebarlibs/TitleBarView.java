@@ -82,8 +82,12 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
      */
     private boolean isImmersive;
 
+    private boolean isTitleFakeBold;
+
+
     private String mTitleText;
     private String mLeftText;
+
 
     public TitleBarView(Context context) {
         this(context, null, 0);
@@ -106,6 +110,7 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         mDividerHeight = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_dividerHeight, 0);
         mActionPadding = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_actionPadding, 0);
         isImmersive = ta.getBoolean(R.styleable.TitleBarView_llh_isImmersive, false);
+        isTitleFakeBold = ta.getBoolean(R.styleable.TitleBarView_llh_isImmersive, false);
 
         mLeftText = ta.getString(R.styleable.TitleBarView_llh_leftText);
         mLeftTextSize = ta.getDimensionPixelSize(R.styleable.TitleBarView_llh_leftTextSize, sp2px(context, DEFAULT_TEXT_SIZE));
@@ -166,6 +171,7 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         mTitleTv = new TextView(context);
         mTitleTv.setGravity(Gravity.CENTER);
         mTitleTv.setText(mTitleText);
+        mTitleTv.getPaint().setFakeBoldText(isTitleFakeBold);
         mTitleTv.setTextSize(px2sp(context, mTitleTextSize));
         mTitleTv.setTextColor(mTitleTextColor);
         mTitleTv.setBackgroundColor(mTitleTextBackgroundColor);
@@ -184,7 +190,6 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         addView(mCenterContainer, params);//添加中间容器
         addView(mRightContainer, params);//添加右边容器
         addView(mDividerView, dividerParams);
-
     }
 
     @Override
@@ -308,6 +313,14 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         mTitleTv.setTextSize(titleTextSpValue);
     }
 
+
+    /**
+     * 设置粗体标题
+     * @param isFakeBold
+     */
+    public void setTitleFakeBold(boolean isFakeBold) {
+        this.isTitleFakeBold = isFakeBold;
+    }
     /**
      * 设置下方分割线
      *
@@ -328,6 +341,10 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
     public void setDividerHeight(int dividerHeight) {
         mDividerHeight = dividerHeight;
         mDividerView.getLayoutParams().height = dividerHeight;
+    }
+
+    public void setOutPadding(int paddingValue) {
+        mPaddingValue = paddingValue;
     }
 
     /**
