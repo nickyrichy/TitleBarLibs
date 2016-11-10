@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTitleBarView3 = (TitleBarView) findViewById(R.id.titleBarView3);
         mTitleBarView4 = (TitleBarView) findViewById(R.id.titleBarView4);
         mTitleBarView1.setOnLeftTextClickListener(this);
+        mTitleBarView1.setOutPadding(500);
 
         mTitleBarView2.setLeftText("签到");
         mTitleBarView2.addLeftAction(new TitleBarView.Action<View>() {

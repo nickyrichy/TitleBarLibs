@@ -345,6 +345,8 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
 
     public void setOutPadding(int paddingValue) {
         mPaddingValue = paddingValue;
+        mLeftContainer.setPadding(mPaddingValue, 0, 0, 0);
+        mRightContainer.setPadding(0, 0, mPaddingValue, 0);
     }
 
     /**
