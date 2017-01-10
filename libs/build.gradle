@@ -23,4 +23,5 @@ android {
 
 dependencies {
 
+compile 'com.android.support:support-compat:24.2.1'
 }

@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.flyco.tablayout.SegmentTabLayout;
-
 import com.utouu.titlebarlibs.TitleBarView;
 
 
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+
 
         mTitleBarView1 = (TitleBarView) findViewById(R.id.titleBarView1);
         mTitleBarView2 = (TitleBarView) findViewById(R.id.titleBarView2);

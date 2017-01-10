@@ -316,11 +316,13 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
 
     /**
      * 设置粗体标题
+     *
      * @param isFakeBold
      */
     public void setTitleFakeBold(boolean isFakeBold) {
         this.isTitleFakeBold = isFakeBold;
     }
+
     /**
      * 设置下方分割线
      *
@@ -481,8 +483,8 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
             }
             //透明状态栏
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //导航栏透明
-//            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            if (!ScreenUtils.checkDeviceHasNavigationBar(getContext()))
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);//导航栏透明
 
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
                 // 部分机型的statusbar会有半透明的黑色背景
