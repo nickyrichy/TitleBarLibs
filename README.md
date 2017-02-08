@@ -18,7 +18,8 @@ dependencies {
 ```
 
 **1.2 功能说明**<br>
-自定义标题栏，轻松实现左中右样式标题,并支持沉浸式状态栏。
+自定义标题栏，轻松实现左中右样式标题,并支持沉浸式状态栏。<br/>
+注意：有NavigationBar（导航栏）的手机未做导航栏透明处理，沉浸式状态栏无效，需要手动设置。
 #### 二、预览
 ![Demo](https://github.com/sandalli/TitleBarLibs/blob/master/demo.gif)
 #### 三、使用

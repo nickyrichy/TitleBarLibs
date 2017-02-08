@@ -192,6 +192,39 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         addView(mDividerView, dividerParams);
     }
 
+    /**
+     * 设置沉浸式状态栏，4.4以上系统支持
+     *
+     * @param isImmersive
+     * @param activity
+     */
+    public void setImmersiveStatus(boolean isImmersive, Activity activity) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            this.isImmersive = isImmersive;
+            if (!isImmersive)
+                return;
+            mStatusHeight = getStatusHeight();
+
+            if (activity == null) {
+                return;
+            }
+            //透明状态栏
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            if (!ScreenUtils.checkDeviceHasNavigationBar(getContext()))
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);//导航栏透明
+
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+                // 部分机型的statusbar会有半透明的黑色背景
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);// SDK21
+            }
+
+        }
+
+    }
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
@@ -212,6 +245,31 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         }
         mDividerView.layout(0, getMeasuredHeight() - mDividerHeight, mScreenWidth, getMeasuredHeight());
     }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT || !isImmersive) {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+            return;
+        }
+        int height;
+        height = MeasureSpec.getSize(heightMeasureSpec) - getStatusHeight();
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
+
+        measureChild(mLeftContainer, widthMeasureSpec, heightMeasureSpec);
+        measureChild(mRightContainer, widthMeasureSpec, heightMeasureSpec);
+        if (mLeftContainer.getMeasuredWidth() > mRightContainer.getMeasuredWidth()) {
+            mCenterContainer.measure(
+                    MeasureSpec.makeMeasureSpec(mScreenWidth - 2 * mLeftContainer.getMeasuredWidth(), MeasureSpec.EXACTLY)
+                    , heightMeasureSpec);
+        } else {
+            mLeftContainer.measure(
+                    MeasureSpec.makeMeasureSpec(mScreenWidth - 2 * mRightContainer.getMeasuredWidth(), MeasureSpec.EXACTLY)
+                    , heightMeasureSpec);
+        }
+        setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), height);
+    }
+
 
     /**
      * 左边文本添加图片
@@ -461,40 +519,6 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         public String getContent() {
             return string;
         }
-    }
-
-
-    /**
-     * 设置沉浸式状态栏，4.4以上系统支持
-     *
-     * @param isImmersive
-     * @param activity
-     */
-    public void setImmersiveStatus(boolean isImmersive, Activity activity) {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            this.isImmersive = isImmersive;
-            if (!isImmersive)
-                return;
-            mStatusHeight = getStatusHeight();
-
-            if (activity == null) {
-                return;
-            }
-            //透明状态栏
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            if (!ScreenUtils.checkDeviceHasNavigationBar(getContext()))
-                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);//导航栏透明
-
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-                // 部分机型的statusbar会有半透明的黑色背景
-                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);// SDK21
-            }
-
-        }
-
     }
 
     /**
